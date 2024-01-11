@@ -1,0 +1,116 @@
+#: include shapebutton.kv
+
+<Rolety>:
+    canvas.before:                          
+        Color:                                     #tło panelu
+            rgb: (0,0,0)
+        Rectangle:
+            size: self.width, self.height
+            pos: self.x, self.y   
+    BoxLayout:                                    #przyciski wyboru rolety
+        size_hint: 0.9, 0.15
+        pos_hint: {'x': 0.05, 'y': 0.8}
+        spacing: 10
+        padding: 5, 5, 5, 5
+        canvas:
+            Color:
+                rgb:(0.7,0.7,0.7)
+            Rectangle:
+                size: self.width, self.height
+                pos: self.x, self.y
+        ShapeButton:
+            id: r_1 
+            text: "Roleta 1"
+            color: (1,1,1,1)
+            background_color: (0,0,0,0)
+            on_release: root.r1_button_click()
+
+        ShapeButton:
+            id: r_2 
+            text: "Roleta 2"
+            color: (1,1,1,1)
+            background_color: (0,0,0,0)
+            on_release: root.r2_button_click()
+       
+        ShapeButton:
+            id: r_3
+            text: "Roleta 3"
+            color: (1,1,1,1)
+            background_color: (0,0,0,0)
+            on_release: root.r3_button_click()
+
+        ShapeButton:
+            id: r_4
+            text: "Roleta 4"
+            color: (1,1,1,1)
+            background_color: (0,0,0,0)
+            on_release: root.r4_button_click()
+
+    BoxLayout:                                                    #przyciki zamknij/otwórz do końca
+        orientation: 'vertical'
+        size_hint: 0.3, 0.6
+        pos_hint: {'x': 0.1, 'y': 0.1}
+        spacing: 30
+        padding: 10,10,10,10
+        canvas:
+            Color:
+                rgb:(0.7,0.7,0.7)
+            Rectangle:
+                size: self.width, self.height
+                pos: self.x, self.y
+        Button:
+            id: up
+            text: "Zasłoń"
+            background_color: (0,0.9,0,1)
+            on_release: root.up_button_click()
+            canvas.before:
+                Color:
+                    rgb:(0,0.9,0)
+                Rectangle:
+                    size: self.width, self.height
+                    pos: self.x, self.y
+        Button:
+            id: down
+            text: "Odsłoń"
+            background_color: (0,0.9,0,1)
+            on_release: root.down_button_click()
+            canvas.before:
+                Color:
+                    rgb:(0,0.9,0)
+                Rectangle:
+                    size: self.width, self.height
+                    pos: self.x, self.y    
+    BoxLayout:                                                    #przyciski zamknij/otwórz o 10%
+        orientation: 'vertical'
+        size_hint: 0.3, 0.6
+        pos_hint: {'x': 0.6, 'y': 0.1}
+        spacing: 30
+        padding: 10,10,10,10
+        canvas:
+            Color:
+                rgb:(0.7,0.7,0.7)
+            Rectangle:
+                size: self.width, self.height
+                pos: self.x, self.y       
+        Button:
+            id: up10
+            text: "Zasłoń o 10%"
+            background_color: (0,0.9,0,1)
+            on_release: root.up10_button_click()
+            canvas.before:
+                Color:
+                    rgb:(0,0.9,0)
+                Rectangle:
+                    size: self.width, self.height
+                    pos: self.x, self.y
+        Button:
+            id: down10
+            text: "Zasłoń o 10%"
+            background_color: (0,0.9,0,1)
+            on_release: root.down10_button_click()
+            canvas.before:
+                Color:
+                    rgb:(0,0.9,0)
+                Rectangle:
+                    size: self.width, self.height
+                    pos: self.x, self.y   

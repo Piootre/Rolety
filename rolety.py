@@ -1,6 +1,7 @@
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 import shapebutton
+from server import send_message
 
 class Rolety(FloatLayout):
 
@@ -14,21 +15,25 @@ class Rolety(FloatLayout):
         next_state = not self.ids.r_1.selected
         self.deactivate_buttons()
         self.ids.r_1.selected = next_state
+        send_message("rolety/wybor", "r1")
         print("r1")
     def r2_button_click(self):
         next_state = not self.ids.r_2.selected
         self.deactivate_buttons()
         self.ids.r_2.selected = next_state
+        send_message("rolety/wybor", "r2")
         print("r2")
     def r3_button_click(self):
         next_state = not self.ids.r_3.selected
         self.deactivate_buttons()
         self.ids.r_3.selected = next_state
+        send_message("rolety/wybor", "r3")
         print("r3")
     def r4_button_click(self):
         next_state = not self.ids.r_4.selected
         self.deactivate_buttons()
         self.ids.r_4.selected = next_state
+        send_message("rolety/wybor", "r4")
         print("r4")
 
     def up_button_click(slef):

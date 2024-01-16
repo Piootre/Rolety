@@ -12,6 +12,8 @@ def send_message(topic, msg,):
 
     # put in your cluster credentials and hostname
     auth = {'username': "Rolety", 'password': "Rolety123"}
-    
+
     publish.multiple(msgs, hostname="bae7e674a7ff46e0a54ac9fe9afe407d.s1.eu.hivemq.cloud", port=8883, auth=auth,
                     tls=sslSettings, protocol=paho.MQTTv31)
+    
+send_message("rolety/wybor", "r1")
